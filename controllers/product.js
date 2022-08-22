@@ -1,56 +1,68 @@
 const productos = require('../models/products')
 
 
-const store = (req, res)=> {
-  res.render('../views/layouts/store.hbs', {
+const store = async (req, res)=> {
+  /* res.render('../views/layouts/store.hbs', {
     layout: false,
     adminMode: false
-  })
+  }) */
+  let data = await productos.findAll()
+  let isAdmin = false
+  if(req.session && req.session.isAuth ){
+
+    isAdmin = true
+  }
+  data = data.map( result => result.dataValues)
+  console.log(data)
+  res.render('../views/layouts/store.hbs', {
+  data: data,
+  layout: false,
+  adminMode: isAdmin
+
+})
+
+
 }
 
 
 const viewAll = async (req, res) => {
-  let data = await productos.findAll()
-
-  data = data.map( result => result.dataValues)
-  console.log(data)
-  res.render('/views/layouts/store.hbs', {data: data})
+  
 
 }
 
 const createView = async (req, res) => {
-  res.render('/views/layouts/add-product.hbs')
+  res.render('../views/layouts/add-product.hbs',{
+    layout: false,
+    
+  } 
+  
+  )
 }
 
 const createPost = async (req, res) => {
  try{
 
-  let { Name, Apellidos, email, DocIdentidad, StatusActive } = req.body
-
-  if(!Name || !Apellidos || !email || !DocIdentidad) {
-    req.flash('error', 'Debes llenar todos los campos')
-    return res.redirect('/views/layouts/add-product.hbs')
+  let { Titles, Sinopsis, Precios, Generos, Imagen } = req.body
+  if(!Titles || !Sinopsis || !Precios || !Generos ) {
+    console.log('Error, Debes llenar todos los campos')
+    return res.redirect('/add-product')
   }
 
-  if(!StatusActive) {
-    StatusActive = false
-  } else {
-    StatusActive = true
-  }
+  
 
   await productos.create({
-    nombre: Name,
-    apellido: Apellidos,
-    email: email,
-    documentoIdentidad: DocIdentidad,
-    estado: StatusActive
+    title: Titles,
+    sinopsis: Sinopsis,
+    precio: Precios,
+    genero: Generos,
+    // imagenUrl: Imagen
   })
-  res.redirect('/views/layouts/store.hbs')
+  res.redirect('/store')
  }
  catch(err){
    console.log(err)
-   req.flash('error', 'Algo sucedio, contacte con el administrador...')
-   res.redirect('/views/layouts/add-product.hbs')
+   //req.flash('error', 'Algo sucedio, contacte con el administrador...')
+   res.redirect('/add-product')
  }
 
 }
@@ -66,15 +78,16 @@ const updateViewForm = async (req, res) => {
   })
   data = data.dataValues
   
-  res.render('admin/ciudadanos/form-ciudadanos',{ 
-    editMode: true,
-    data: data
+  res.render('../views/layouts/add-product',{ 
+    layout: false,
+    /*  editMode: true,
+    data: data  */
   })
 
  } catch(err) {
   console.log(err)
-  req.flash('error', 'Algo sucedio, contacte con el administrador...')
-  res.redirect('/admin/ciudadanos/view_all')
+ // req.flash('error', 'Algo sucedio, contacte con el administrador...')
+  res.redirect(`/product/update/${id}`)
 
  }
 }
@@ -83,31 +96,23 @@ const updatePost = async (req, res) => {
   try {
     const id  = req.params.id
 
-    let { Name, Apellidos, email, DocIdentidad, StatusActive } = req.body
+    let { Titles, Sinopsis, Precios, Generos, Imagen } = req.body
 
-    if(!Name || !Apellidos || !email || !DocIdentidad) {
-      req.flash('error', 'Debes llenar todos los campos')
-      return res.redirect('/admin/ciudadanos/create')
+    if(!Titles || !Sinopsis || !Precios || !Generos || !Imagen) {
+      console.log('Error, Debes llenar todos los campos')
+      return res.redirect(`/product/updateViewForm/${id}`)
     }
   
-    if(!StatusActive) {
-      StatusActive = false
-    } else {
-      StatusActive = true
-    }
+   
   
-  let data = await productos.findOne({
-    where:{
-      id: id
-    },
-  })
+  
 
   await productos.update({
-    nombre: Name,
-    apellido: Apellidos,
-    email: email,
-    documentoIdentidad: DocIdentidad,
-    estado: StatusActive
+    title: Titles,
+    sinopsis: Sinopsis,
+    precio: Precios,
+    genero: Generos,
+    imagenUrl: Imagen
   },
   {
     where: {
@@ -118,7 +123,7 @@ const updatePost = async (req, res) => {
   res.redirect('/admin/ciudadanos/view_all')
   } catch(err) {
     console.log(err)
-    req.flash('error', 'Algo sucedio, contacte con el administrador...')
+  //  req.flash('error', 'Algo sucedio, contacte con el administrador...')
     res.redirect(`/admin/puestos_electivos/update/${id}`)
   }
 }
@@ -136,19 +141,19 @@ const deletePost = async (req, res) => {
 
  try{
 
-  await productos.update({estado: false },{
+  await productos.destroy({
     where:{
       id: id
     }
   })
 
-  req.flash('exito', 'Accion completada con exito!')
-  res.redirect('/admin/ciudadanos/view_all')
+  //req.flash('exito', 'Accion completada con exito!')
+  res.redirect('/store')
 
  } catch(err) {
    console.log(err)
-   req.flash('error', 'Algo sucedio, contacte con el administrador...')
-   res.redirect('/admin/ciudadanos/view_all')
+  // req.flash('error', 'Algo sucedio, contacte con el administrador...')
+   res.redirect('/store')
  }
   
 }

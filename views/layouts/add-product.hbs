@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tic Game Store- Responsive HTML5 Template</title>
+    <title>Tic Game Store</title>
 
     <!-- CSS -->
     <link href="assets/css/fonts/etline-font.min.css" rel="stylesheet">
@@ -36,17 +36,12 @@
     <div class="container">
       <div class="row">
         <div class="col-4 col-sm-3 col-md-2 mr-auto">
-          <a class="navbar-brand logo" href="#">
+          <a class="navbar-brand logo" href="/">
             <img src="assets/img/Tic game store.png"     alt="Wicodus"  class="logo-light mx-auto">
           </a>
         </div>
         <div class="col-4 d-none d-lg-block mx-auto">
-          <form class="input-group border-0 bg-transparent">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-              <button class="btn btn-sm btn-warning text-secondary my-0 mx-0" type="submit"><i class="fas fa-search"></i></button>
-            </div>
-          </form>
+         
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-6 col-xl-4 ml-auto text-right">
           <a class="btn btn-sm btn-warning text-secondary mr-2" href="#" data-toggle="modal" data-target="#userLogin">Acceder</a>
@@ -82,13 +77,11 @@
             <a class="nav-link  pl-lg-0" href="./store" >Juegos </a>
            
           </li>
-       
+          
           <li class="nav-item">
             <a class="nav-link" href="/">Sobre nosotros</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Ayuda</a>
-          </li>
+          
         </ul>
       </div>
     </div>
@@ -107,7 +100,7 @@
   
           <div class="col-md-6">
               
-              <form method="POST" enctype="multipart/form-data" action="{{#if editMode}} {{else}}/admin/candidatos/create{{/if}}">
+              <form method="POST"  action="{{#if editMode}} /product/update/{{data.id}} {{else}}/add-product{{/if}}">
   
                   <div class="card bg-dark mt-5">
   
@@ -116,40 +109,38 @@
                       </div>
   
                       <div class="card-body">
-  
+                           
                           <div class="mb-3">
                               <label for="title" class="form-label text-white">Title: </label>
-                              <input type="text" class="form-control"  value="Title"  id="titles" name="Titles">
+                              <input type="text" class="form-control" {{#if editMode}} value="{{data.title}}" {{/if}}   id="titles" name="Titles">
                           </div>
   
   
                           <div class="mb-3">
                               <label for="apellidos" class="form-label text-white">Sinopsis: </label>
-                              <input type="text" class="form-control" value="Sinopsis"  id="Sinopsis" name="Sinopsis">
+                              <input type="text" class="form-control"{{#if editMode}} value="{{data.sinopsis}}" {{/if}} id="Sinopsis" name="Sinopsis">
                           </div>
   
                           <div class="mb-3">
-                              <label for="imagen-candidato" class="form-label text-white">Seleccione una imagen: </label>
+                              <label for="imagen" class="form-label text-white">Seleccione una imagen: </label>
                               <!-- {{#if editMode}}  <small>Si quiere mantener la foto actual, solo omita esta opcion</small>  {{/if}} -->
-                              <input class="form-control" type="file" id="imagen-candidato" name="Imagen_candidato">
+                              <input class="form-control" type="file" id="imagen" name="Imagen">
                           </div>
 
                           <div class="mb-3">
                             <label for="generos" class="form-label text-white">Genero: </label>
-                            <input type="text" class="form-control" value="Genero"  id="generos" name="Generos">
+                            <input type="text" class="form-control" {{#if editMode}} value="{{data.genero}}" {{/if}}  id="generos" name="Generos">
                         </div>
 
                         <div class="mb-3">
                           <label for="precios" class="form-label text-white">Precio: </label>
-                          <input type="text" class="form-control" value="Precio"  id="precios" name="Precios">
-                      </div>
+                          <input type="text" class="form-control" {{#if editMode}} value="{{data.precio}}" {{/if}}  id="precios" name="Precios">
+                        </div>
   
-  
-                          <!-- {{#if puestos}}
-                              {{#if partidos}} -->
-                                  <button type="btn" class="btn btn-outline-primary float-right w-25 float-end"> Añadir </button>                            
-                              <!-- {{/if}}
-                          {{/if}} -->
+                        
+                          
+                          <button type="btn" class="btn btn-outline-primary float-right w-25 float-end"> Añadir </button>                            
+                             
                       </div>
   
                   </div>

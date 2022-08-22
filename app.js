@@ -2,6 +2,7 @@ const path = require('path');
 const express =  require('express');
 const expressHbs = require("express-handlebars");
 const db = require('./config/db')
+var bodyParser = require('body-parser')
 
 
 const {
@@ -14,6 +15,7 @@ const {
 //routes
 const home = require('./routes/home')
 const store = require ('./routes/routesIndex') 
+
 
 
 const app = express();
@@ -33,8 +35,12 @@ app.engine ("hbs", expressHbs({
 app.set('view engine', 'hbs')
 app.set('views', 'views')
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+
 
 app.use('/', store)
+
 // app.use('/', home)  
 
 
