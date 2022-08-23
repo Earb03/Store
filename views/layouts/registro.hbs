@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tic Game Store</title>
+    <title>Tic Game Store- Responsive HTML5 Template</title>
 
     <!-- CSS -->
     <link href="assets/css/fonts/etline-font.min.css" rel="stylesheet">
@@ -41,10 +41,15 @@
           </a>
         </div>
         <div class="col-4 d-none d-lg-block mx-auto">
-         
+          <form class="input-group border-0 bg-transparent">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-sm btn-warning text-secondary my-0 mx-0" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </form>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-6 col-xl-4 ml-auto text-right">
-          <a class="btn btn-sm btn-warning text-secondary mr-2" href="#" data-toggle="modal" data-target="#userLogin">Acceder</a>
+          <a class="btn btn-sm btn-warning text-secondary mr-2" href="/" >Acceder</a>
           <a class="btn btn-sm text-light d-none d-sm-inline-block" href="#">Registrarse</a>
           <ul class="nav navbar-nav d-none d-sm-inline-flex flex-row">
             <li class="nav-item dropdown">
@@ -77,11 +82,17 @@
             <a class="nav-link  pl-lg-0" href="./store" >Juegos </a>
            
           </li>
-          
+
+          <li class="nav-item">
+            <a class="nav-link" href="/">Admin</a>
+          </li>
+       
           <li class="nav-item">
             <a class="nav-link" href="/">Sobre nosotros</a>
           </li>
-          
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ayuda</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -100,47 +111,44 @@
   
           <div class="col-md-6">
               
-              <form method="POST"  action="{{#if editMode}} /product/update/{{data.id}} {{else}}/add-product{{/if}}">
+              <form method="POST"  action="/registro">
   
                   <div class="card bg-dark mt-5">
   
                       <div class="card-header bg-primary"> 
-                          <h5 class="text-white"> <!-- {{#if editMode}}Edite{{else}} -->Introduzca<!-- {{/if}} --> la info del Juego: </h5>   
+                          <h5 class="text-white text-center fw-bold "> <!-- {{#if editMode}}Edite{{else}} -->Sign Up<!-- {{/if}} --> </h5>   
                       </div>
   
                       <div class="card-body">
                            
                           <div class="mb-3">
-                              <label for="title" class="form-label text-white">Title: </label>
-                              <input type="text" class="form-control" {{#if editMode}} value="{{data.title}}" {{/if}}   id="titles" name="Titles">
+                              <label for="nombre" class="form-label text-white">Nombre: </label>
+                              <input type="text" class="form-control"    id="Nombre" name="nombre">
                           </div>
   
   
                           <div class="mb-3">
-                              <label for="apellidos" class="form-label text-white">Sinopsis: </label>
-                              <input type="text" class="form-control"{{#if editMode}} value="{{data.sinopsis}}" {{/if}} id="Sinopsis" name="Sinopsis">
+                              <label for="apellidos" class="form-label text-white">Apellido: </label>
+                              <input type="text" class="form-control"   id="Apellido" name="apellido">
                           </div>
   
                           <div class="mb-3">
-                              <label for="imagen" class="form-label text-white">Seleccione una imagen: </label>
-                              <!-- {{#if editMode}}  <small>Si quiere mantener la foto actual, solo omita esta opcion</small>  {{/if}} -->
-                              <input class="form-control" type="file" id="imagen" name="Imagen">
+                              <label for="email" class="form-label text-white">Email: </label>
+                              <input type="text" class="form-control"  id="Email" name="email">
                           </div>
 
                           <div class="mb-3">
-                            <label for="generos" class="form-label text-white">Genero: </label>
-                            <input type="text" class="form-control" {{#if editMode}} value="{{data.genero}}" {{/if}}  id="generos" name="Generos">
+                            <label for="usuriao" class="form-label text-white">Usuario: </label>
+                            <input type="text" class="form-control"  id="usuario" name="nombreUsuario">
                         </div>
 
                         <div class="mb-3">
-                          <label for="precios" class="form-label text-white">Precio: </label>
-                          <input type="text" class="form-control" {{#if editMode}} value="{{data.precio}}" {{/if}}  id="precios" name="Precios">
-                        </div>
-  
-                        
-                          
-                          <button type="btn" class="btn btn-outline-primary float-right w-25 float-end"> Añadir </button>                            
-                             
+                          <label for="contraseña" class="form-label text-white">Contraseña: </label>
+                          <input type="text" class="form-control"   id="contraseña" name="password">
+                        </div>  
+                                                 
+                          <button type="btn" class="btn btn-outline-primary ml-5 float-right w-25 float-end"> Añadir </button>                            
+                          <button type="btn" class="btn btn-outline-warning float-right w-25 float-end"> Cancelar </button> 
                       </div>
   
                   </div>

@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const expressHbs = require("express-handlebars");
 const db = require("./config/db");
+var session = require("express-session");
 
 const bodyParser = require("body-parser");
 
@@ -25,9 +26,23 @@ app.engine(
   })
 );
 
+app.use(
+  session({
+    secret: "!@#$%^&()qwertyASDFG)",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
 app.set("view engine", "hbs");
 app.set("views", "views");
+
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use("/", store);
+
+// app.use('/', home)
 
 app.use("/", store);
 // app.use('/', home)
