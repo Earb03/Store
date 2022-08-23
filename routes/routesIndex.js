@@ -1,17 +1,16 @@
-const { Router } = require('express')
+const { Router } = require("express");
 
-const home = require('./home')
-const login = require('./login')
-const product = require('./product')
-const shop = require('./shop')
+const home = require("./home");
+const login = require("./login");
+const product = require("./product");
+const shop = require("./shop");
 
-
-const router = Router()
-
+const router = Router();
 
 // router.use(login)
-router.use(product)
+router.use(product);
 // router.use(shop)
-router.use(home)
+router.use(home);
+router.use(login);
 
-module.exports = router
+module.exports = router;

@@ -49,7 +49,7 @@
           </form>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-6 col-xl-4 ml-auto text-right">
-          <a class="btn btn-sm btn-warning text-secondary mr-2" href="#" data-toggle="modal" data-target="#userLogin">Acceder</a>
+          <a class="btn btn-sm btn-warning text-secondary mr-2" href="/" >Acceder</a>
           <a class="btn btn-sm text-light d-none d-sm-inline-block" href="#">Registrarse</a>
           <ul class="nav navbar-nav d-none d-sm-inline-flex flex-row">
             <li class="nav-item dropdown">
@@ -111,7 +111,7 @@
   
           <div class="col-md-6">
               
-              <form method="POST"  action="{{#if editMode}} /product/update/{{data.id}} {{else}}/add-product{{/if}}">
+              <form method="POST"  action="/registro">
   
                   <div class="card bg-dark mt-5">
   
@@ -129,22 +129,22 @@
   
                           <div class="mb-3">
                               <label for="apellidos" class="form-label text-white">Apellido: </label>
-                              <input type="text" class="form-control"   id="Apellido" name="apellidos">
+                              <input type="text" class="form-control"   id="Apellido" name="apellido">
                           </div>
   
                           <div class="mb-3">
                               <label for="email" class="form-label text-white">Email: </label>
-                              <input type="text" class="form-control"  id="Email" name="emails">
+                              <input type="text" class="form-control"  id="Email" name="email">
                           </div>
 
                           <div class="mb-3">
                             <label for="usuriao" class="form-label text-white">Usuario: </label>
-                            <input type="text" class="form-control"  id="usuario" name="Usuarios">
+                            <input type="text" class="form-control"  id="usuario" name="nombreUsuario">
                         </div>
 
                         <div class="mb-3">
                           <label for="contraseña" class="form-label text-white">Contraseña: </label>
-                          <input type="text" class="form-control"   id="contraseña" name="Contraseñas">
+                          <input type="text" class="form-control"   id="contraseña" name="password">
                         </div>  
                                                  
                           <button type="btn" class="btn btn-outline-primary ml-5 float-right w-25 float-end"> Añadir </button>                            
