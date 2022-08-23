@@ -20,7 +20,7 @@ const multer = require("multer");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "src/public/uploads");
+    cb(null, "views/layouts/img");
   },
   filename: (req, file, cb) => {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
@@ -38,8 +38,8 @@ router.get("/store", store);
 
 // router.get('/view_all', viewAll)
 
-router.get("/add-product", upload.single("ImagenPartido"), createView);
-router.post("/add-product", createPost);
+router.get("/add-product", createView);
+router.post("/add-product", upload.single("Imagen"), createPost);
 
 // router.get('/product/update/:id', updateView)
 router.get("/product/update/:id", updateViewForm);
