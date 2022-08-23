@@ -100,7 +100,7 @@
   
           <div class="col-md-6">
               
-              <form method="POST"  action="{{#if editMode}} /product/update/{{data.id}} {{else}}/add-product{{/if}}">
+              <form method="POST" enctype="multipart/form-data"  action="{{#if editMode}} /product/update/{{data.id}} {{else}}/add-product{{/if}}">
   
                   <div class="card bg-dark mt-5">
   

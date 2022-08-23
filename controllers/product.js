@@ -36,11 +36,14 @@ const createPost = async (req, res) => {
       return res.redirect("/add-product");
     }
 
+    console.log(req.file.filename);
+
     await productos.create({
       title: Titles,
       sinopsis: Sinopsis,
       precio: Precios,
       genero: Generos,
+      imageUrl: req.file.filename,
       // imagenUrl: Imagen
     });
     res.redirect("/store");
