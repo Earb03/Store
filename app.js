@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const { usuarios, productos } = require("./models/modelsIndex.js");
 
 //routes
-const home = require("./routes/home");
+//const home = require("./routes/home");
 const store = require("./routes/routesIndex");
 
 const app = express();
@@ -42,8 +42,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/", store);
 
-// app.use('/', home)
-
+//app.use('/', home)
 app.use("/", store);
 // app.use('/', home)
 

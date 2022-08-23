@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tic Game Store - Help Center</title>
+    <title>tic game store - About</title>
 
     <!-- CSS -->
     <link href="assets/css/fonts/etline-font.min.css" rel="stylesheet">
@@ -13,6 +13,7 @@
     <link href="assets/css/fonts/themify-icons.css" rel="stylesheet">
 
     <link href="assets/plugins/owl.carousel/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/plugins/slick/slick.css" rel="stylesheet">
 
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet">
@@ -30,8 +31,7 @@
     <![endif]-->
   </head>
   <body class="page-body">
-
-    
+  
      <!-- navbar -->
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-nav zi-3">
       <div class="container">
@@ -41,27 +41,18 @@
               <img src="assets/img/Tic game store.png"     alt="Wicodus"  class="logo-light mx-auto">
             </a>
           </div>
+          <div class="col-4 d-none d-lg-block mx-auto">
+            <form class="input-group border-0 bg-transparent">
+              <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-sm btn-warning text-secondary my-0 mx-0" type="submit"><i class="fas fa-search"></i></button>
+              </div>
+            </form>
+          </div>
           <div class="col-8 col-sm-8 col-md-8 col-lg-6 col-xl-4 ml-auto text-right">
             <a class="btn btn-sm btn-warning text-secondary mr-2" href="#" data-toggle="modal" data-target="#userLogin">Acceder</a>
             <a class="btn btn-sm text-light d-none d-sm-inline-block" href="#">Registrarse</a>
-            <ul class="nav navbar-nav d-none d-sm-inline-flex flex-row">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle small" href="#" id="dropdownGaming" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mr-2 fas fa-globe"></i>ES </a>
-                <div class="dropdown-menu position-absolute" aria-labelledby="dropdownGaming">
-                  <a class="dropdown-item" href="#">Español</a>
-                 
-                <a class="dropdown-item" href="#">English</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link small" href="" data-toggle="offcanvas" data-target="#offcanvas-cart">
-                  <span class="p-relative d-inline-flex">
-                    <span class="badge-cart badge badge-counter badge-warning position-absolute l-1">2</span>
-                    <i class="fas fa-shopping-cart"></i>
-                  </span>
-                </a>
-              </li>
-            </ul>
+            
           </div>
         </div>
       </div>
@@ -71,20 +62,20 @@
         <button class="navbar-toggler navbar-toggler-fixed" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">☰</button>
         <div class="collapse navbar-collapse" id="collapsingNavbar">
           <ul class="navbar-nav">
-
             <li class="nav-item">
-              <a class="nav-link" href="#">Inicio</a>
+              <a class="nav-link" href="/">Inicio</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="#" id="dropdownGaming_games"  aria-haspopup="true" aria-expanded="false">Juegos</a>
-            
+              <a class="nav-link  " href="./store" >Store</a>
+
             </li>
             
             <li class="nav-item">
-              <a class="nav-link" href="#">Sobre nosotros</a>
+              <a class="nav-link" href="./about">Sobre nosotros</a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="#">Soporte</a>
+              <a class="nav-link" href="./help-center">Ayuda</a>
             </li>
           </ul>
         </div>
@@ -92,83 +83,165 @@
     </nav>
     <!-- /.navbar -->
 
-    <!-- main content -->
-    <main class="main-content gradient-lg position-relative">
-
-      <!-- overlay -->
-      <div class="overlay pe-n br-n bp-c bs-c o-30" style="background-image: url(assets/img/bg/bg_shape.png);"></div>
-      <!-- /.overlay -->
-
-      <!-- content area -->
-      <div class="content-section help_c text-light">
-        <div class="container">
-          <header class="header mb-8">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb-product breadcrumb breadcrumb-nowrap breadcrumb-angle bg-transparent pl-0 pr-0 mb-0">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Help Center</li>
-              </ol>
-            </nav>
-          </header>
-          <div class="position-relative">
-            <div class=" mb-8 mb-lg-10">
-              <div class="col-12">
-                <header class="text-center mb-6 mb-md-8">
-                  <h2 class="mb-0">Welcome to the Customer Support!</h2>
-                  <hr class="w-10 border-top-2 mt-5 mb-6 mx-auto border-warning">
-                </header>
-             </div>
-
-             <div id="accordion">
-              <div class="card">
-                <div class="card-header bg-info" id="headingOne">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link text-body" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Collapsible Group Item #1
-                    </button>
-                  </h5>
-                </div>
-            
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                  </div>
-                </div>
+    <!-- header -->
+    <header id="header" class="header h-fullscreen__page text-light">
+      <div class="media-container parallax-window" data-parallax="scroll" data-image-src="assets/img/bg/bg2.jpg"></div>
+      <div class="overlay bg-dark_A-60"></div>
+      <div class="overlay d-flex align-items-center">
+        <div class="container text-center">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mx-auto">
+              <div class="fadeIn ad-500ms">
+                <h1 class="mb-6">Sobre nosotros</h1>
+                <p class="lead-lg mb-7">Proyecto final programacion 3 somos estudiantes en termino de la carrera de sofware en el ITLA .</p>
               </div>
-              <div class="card">
-                <div class="card-header" id="headingTwo">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Collapsible Group Item #2
-                    </button>
-                  </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingThree">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Collapsible Group Item #3
-                    </button>
-                  </h5>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                  </div>
-                </div>
-              </div>
-            </div>
             </div>
           </div>
         </div>
       </div>
-                 
+    </header>
+    <!-- /.header -->
+
+    <main class="main-content">
+
+      <!-- content area -->
+      <section class="content-section text-center text-light parallax-window position-relative" data-parallax="scroll" data-image-src="assets/img/bg/lostark.jpeg">
+        <div class="overlay bg-dark_A-80 pe-n"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <h2 class="mb-6">Qué hacemos.</h2>
+              <hr class="w-10 border-top-2 my-6 my-xl-7 border-warning">
+              <p class="lead-1">Somos una tienda que vende articulos de primera de manera virtual facilitando al entretenimiento de nuestros fieles compradores.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.content area -->
+
+      <!-- content area -->
+      <section class="content-section gradient-lg">
+        <div class="container">
+          <div class="row gutters-y align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 ml-auto">
+              <div class="ar-4_3 bs-c bp-c br-n rounded" style="background-image: url(assets/img/bg/itla-1-728x410.webp)"></div>
+            </div>
+            <div class="col-lg-6 ml-lg--8 rounded bg-dark text-light shadow-lg-3 py-7 px-lg-7 py-lg-6">
+              <h3 class="mb-4">Nuestra Misión.</h3>
+              <hr class="w-10 border-top-2 my-6 my-xl-7 ml-0 border-warning">
+              <p class="lead-1">Estudiantes del itla dispuestos a mostrar la maejor version de nosotros y dar la mejor experiencia de nuestra pagina web gamer.</p>
+              <div class="text-right"><p class="text-warning mt-0">itla.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /.content area -->
+
+     
+
+      <!-- content area -->
+      <section class="content-section latest-articles text-center text-light">
+        <div class="container">
+          <header class="section-header">
+            <h2>Nuestro Equipo</h2>
+            <hr class="w-10 border-top-2 border-warning o-80">
+          </header>
+          <div class="row">
+            <div class="col-md-4 mb-9 mb-md-0">
+              <article class="card article-post">
+                <div class="position-relative overflow-hidden br-n bp-c bs-c article-image ar-1_1 w-50 mx-auto rounded-circle mb-4" style="background-image: url(assets/img/avatar/leonardo.jpg)"></div>
+                <figure>
+                  <figcaption>
+                    <h5 class="text-light mt-1 mb-0"><a href="#" class="text-light">Leonardo issaias <br>herasme santin </a></h5>
+                    <hr class="w-10 border-top-2 my-6 my-xl-7 border-warning">
+                    <p> Matricula 2017-4674</p>
+                    <span class="small d-inline-block py-2 px-4 bg-dark_A-20 text-warning">Front-END</span>
+                  </figcaption>
+                </figure>     
+              </article>
+            </div>
+            <div class="col-md-4 mb-9 mb-md-0">
+              <article class="card article-post">
+                <div class="position-relative overflow-hidden br-n bp-c bs-c article-image ar-1_1 w-50 mx-auto rounded-circle mb-4" style="background-image: url(assets/img/avatar/francisco.jpg)"></div>
+                <figure>
+                  <figcaption>
+                    <h5 class="text-light mt-1 mb-0"><a href="#" class="text-light">Francisco Lizardo</a></h5>
+                    <hr class="w-10 border-top-2 my-6 my-xl-7 border-warning">
+                    <blockquote>
+                        <p>Matricula 2018-6051</p>
+                    </blockquote>
+                    <span class="small d-inline-block py-2 px-4 bg-dark_A-20 text-warning">Diseñador Front-END</span>
+                  </figcaption>
+                </figure>     
+              </article>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-9 mb-md-0">
+                <article class="card article-post">
+                  <div class="position-relative overflow-hidden br-n bp-c bs-c article-image ar-1_1 w-50 mx-auto rounded-circle mb-4" style="background-image: url(assets/img/avatar/anthony.jpg)"></div>
+                  <figure>
+                    <figcaption>
+                      <h5 class="text-light mt-1 mb-0"><a href="#" class="text-light">Anthony Contreras </a></h5>
+                      <hr class="w-10 border-top-2 my-6 my-xl-7 border-warning">
+                      <p> Matricula 2016-4397</p>
+                      <span class="small d-inline-block py-2 px-4 bg-dark_A-20 text-warning">Back-END</span>
+                    </figcaption>
+                  </figure>     
+                </article>
+              </div>
+              <div class="col-md-4 mb-9 mb-md-0">
+                <article class="card article-post">
+                  <div class="position-relative overflow-hidden br-n bp-c bs-c article-image ar-1_1 w-50 mx-auto rounded-circle mb-4" style="background-image: url(assets/img/avatar/jordy.jpg)"></div>
+                  <figure>
+                    <figcaption>
+                      <h5 class="text-light mt-1 mb-0"><a href="#" class="text-light">Jordy Isaac Martinez Martinez</a></h5>
+                      <hr class="w-10 border-top-2 my-6 my-xl-7 border-warning">
+                      <blockquote>
+                          <p>Matricula 2018-7069</p>
+                      </blockquote>
+                      <span class="small d-inline-block py-2 px-4 bg-dark_A-20 text-warning">Diseñador Front-END</span>
+                    </figcaption>
+                  </figure>     
+                </article>
+              </div>
+            <div class="col-md-4">
+              <article class="card article-post">
+                <div class="position-relative overflow-hidden br-n bp-c bs-c article-image ar-1_1 w-50 mx-auto rounded-circle mb-4" style="background-image: url(assets/img/avatar/edward.jpeg)"></div>
+                <figure>
+                  <figcaption>
+                    <h5 class="text-light mt-1 mb-0"><a href="#" class="text-light">Edward Alfonso De La Rosa Bodre</a></h5>
+                    <hr class="w-10 border-top-2 my-6 my-xl-7 border-warning">
+                    <blockquote>
+                        <p>Matricula 2018-6490</p>
+                    </blockquote>
+                    <span class="small d-inline-block py-2 px-4 bg-dark_A-20 text-warning">Back-end</span>
+                  </figcaption>
+                  
+                </figure>     
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <article class="card article-post">
+            <div class="position-relative overflow-hidden br-n bp-c bs-c article-image ar-1_1 w-50 mx-auto rounded-circle mb-4" style="background-image: url(assets/img/avatar/lenny.jpg)"></div>
+            <figure>
+              <figcaption>
+                <h5 class="text-light mt-1 mb-0"><a href="#" class="text-light">Lenny Batista</a></h5>
+                <hr class="w-10 border-top-2 my-6 my-xl-7 border-warning">
+                <blockquote>
+                    <p>Matricula 2017-5526</p>
+                </blockquote>
+                <span class="small d-inline-block py-2 px-4 bg-dark_A-20 text-warning">QA</span>
+              </figcaption>
+              
+            </figure>     
+          </article>
+        </div>
+      </div>
+    </div>
+      
+      
     </main>
 
      <!-- footer -->
@@ -197,7 +270,6 @@
               </div>
 
              
-
               <div class="col-6 col-lg-2">
                 <h6 class="text-uppercase fw-600 mb-4">Ayuda</h6>
                 <div class="nav flex-column">
@@ -234,6 +306,7 @@
       </div>
     </footer>
     <!-- /.footer -->
+   
 
     <!-- sign Up -->
     <div class="modal fade" id="userLogin" tabindex="-1" role="dialog" aria-labelledby="userLoginTitle" aria-hidden="true">
@@ -353,10 +426,13 @@
     <!-- Bootstrap -->
     <script src="assets/js/bootstrap.min.js"></script>
 
+    <!-- Parallax -->
+    <script src="assets/plugins/parallax/parallax.js"></script>
+
     <!-- User JS -->
     <script src="assets/js/scripts.js"></script>
 
     <!-- Main JS -->
-    <script src="assets/js/main.js" id="_mainJS" data-plugins="load"></script>
+    <script src="assets/js/main.js" id="_mainJS"></script>
   </body>
 </html>
